@@ -1,0 +1,11 @@
+﻿@using DemoMVC.ViewModels
+@model IEnumerable<CategoryViewModel>
+
+
+
+<h3>I am inside the index view</h3>
+
+@foreach (var category in Model)
+{
+   @Html.Partial("_CategoryCard", category)
+}

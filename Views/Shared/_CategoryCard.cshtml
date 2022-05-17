@@ -1,0 +1,13 @@
+﻿@using DemoMVC.ViewModels
+
+@model CategoryViewModel
+
+
+<div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+        <div class="card-header">@Model.Name</div>
+        <div class="card-body">
+            <h4 class="card-title">Number of products: @Model.ProductsCount</h4>
+             <h4 class="card-title">Most expensive product: @Model?.MostExpensiveProductName</h4>
+            <p class="card-text">@Model.Description</p>
+        </div>
+    </div>

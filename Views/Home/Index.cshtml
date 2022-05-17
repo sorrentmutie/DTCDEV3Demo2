@@ -1,0 +1,25 @@
+﻿@using DemoMVC.WorkerServices
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@inject ICategoriesWorkerService service
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+@section Scripts {
+<script>
+    $.getJSON("/Home/MySpecialAction", function(data){
+        console.log(data);
+        var newElement = document.createElement("div");
+        newElement.innerText = data.name + " " + data.surname;
+        document.body.appendChild(newElement);
+    });
+</script>
+
+}
+@Html.Partial("_CategoryCard", service.GetLastAdded())
